@@ -18,5 +18,13 @@ _Input: nums = [3,3], target = 6 <br>
 Output: [0,1]_
 
 ### 3. Solutions:
+- We will need a JavaScript object (key, value pair) to store the array element and index. E.g: if the array is [3, 2, 4], then the object will be {{3, 0}, {2, 1}, {4, 2}}.
+- Why the key must be the element value and the value must be the index? <br>
+++ Because we will need to check whether the key is in the object, and the object[key] only takes O(1) time complexity. <br>
+++ And we store the element index in the value because it will be needed for the output. <br>
+- Next, loop through the array, and for each element, check if the complement (target - current element) exists in the object. <br />
+++ If it does, return the indices of the current element and the complement. <br>
+++ If it doesn't, add the current element to the object with its index. <br>
 
-Updating...
+
+
